@@ -6,7 +6,7 @@ module.exports = {
     //mode: 'development', //yarn webpack --mode=development　開発用
     mode: 'production', //yarn webpack --mode=production　本番用
     // エントリーポイントの設定
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     // 出力の設定
     output: {
         // 出力先のパス（絶対パスを指定する必要がある）
@@ -21,7 +21,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                // Babel のローダーの設定
+                //対象のファイルの拡張子
+                test: /\.(js|mjs|jsx)$/,
+                //対象外とするフォルダ
+                exclude: /node_modules/,
                 use: [
                     {
                         loader: "babel-loader",
@@ -33,4 +37,8 @@ module.exports = {
             },
         ],
     },
+    //import文に拡張子を付けなくてよくなる設定
+    resolve: {
+        extensions: ['.js', '.jsx'],
+      },
   };
