@@ -1,0 +1,1 @@
+(()=>{var o={717:o=>{o.exports=function(){console.log("foo")}}},r={};function t(e){if(r[e])return r[e].exports;var s=r[e]={exports:{}};return o[e](s,s.exports,t),s.exports}(()=>{"use strict";const o=t(717);console.log("bar"),o()})()})();
